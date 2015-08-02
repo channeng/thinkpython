@@ -1,6 +1,6 @@
-def uses_only(word,uses_letters):
-	for letter in word:
-		for i in uses_letters:
+def uses_all(word,uses_letters):
+	for i in uses_letters:
+		for letter in word:
 			if letter == i:
 				break
 		else:
@@ -15,7 +15,7 @@ with open("ex9-2words.txt") as f:
 	for line in f:
 		word= line.strip()
 		total +=1
-		if uses_only(word,uses_letters):
+		if uses_all(word,uses_letters):
 			counter +=1
 			print word
 	percent =counter/float(total)
