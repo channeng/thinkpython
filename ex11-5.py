@@ -11,5 +11,5 @@ def fibonacci(n,memo):
 		return new
 
 start = time.time()
-print fibonacci(90,memo)
+print fibonacci(50,memo)
 print time.time()-start
