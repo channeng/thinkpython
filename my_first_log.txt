@@ -1,0 +1,2 @@
+/Users/shannonchan/Desktop/Study Resources/Python books/exercises
+['.DS_Store', '.git', 'ebook.txt', 'ex10-10.py', 'ex10-11.py', 'ex10-4.py', 'ex10-8.py', 'ex11-1.py', 'ex11-5.py', 'ex12-3.py', 'ex12-4.py', 'ex13-1.py', 'ex13-2_count-letters.py', 'ex13-2_count-words.py', 'ex13-8_markov.py', 'ex14-4.py', 'ex14.py', 'ex6-5.py', 'ex6-7.py', 'ex9-2.py', 'ex9-3.py', 'ex9-4.py', 'ex9-5.py', 'ex9-5anagram.py', 'my_first_log.txt', 'words.txt']
