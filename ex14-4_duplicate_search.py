@@ -19,8 +19,9 @@ def sort_by_length(words_list):
 # Returns md5sum of a file given the file path
 def md5_file(file_path):
 	cmd = 'md5 '+file_path
-	fp_open = os.popen(cmd).read()
-	md5_hash = fp_open[-33:].strip()
+	fp_open = os.popen(cmd)
+	md5_hash = fp_open.read()[-33:].strip()
+	fp_open.close()
 	return md5_hash
 
 # Returns a dictionary of hashes with files that has the same hash
@@ -52,13 +53,18 @@ for i in result:
 	if len(result[i])>1:
 		set_to_delete = set_to_delete + [result[i]]
 
-original_filee = []
-delete_filees = []
-for i in set_to_delete:
-	set_sorted = sort_by_length(i)
-	original_filee = original_filee + [set_sorted[0]]
-	delete_filees = delete_filees + [set_sorted[1:]]
-print "%-50s | %s" %("Keep Original","Delete Duplicates")
-print "-"*100
-for original,delete in zip(original_filee,delete_filees):
-	print "%-50s | %s" %(original,delete)
+if set_to_delete == []:
+	print "\nNo duplicate files found in " + dir_path + ". Woohoo!\n"
+else:
+	original_filee = []
+	delete_filees = []
+	for i in set_to_delete:
+		set_sorted = sort_by_length(i)
+		original_filee = original_filee + [set_sorted[0]]
+		delete_filees = delete_filees + [set_sorted[1:]]
+	print "\n"*50
+	print "%-50s | %s" %("Keep Original","Delete Duplicates")
+	print "-"*100
+	for original,delete in zip(original_filee,delete_filees):
+		print "%-50s | %s" %(original,delete)
+	print
